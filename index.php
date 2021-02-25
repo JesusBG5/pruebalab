@@ -45,7 +45,11 @@
                             <option value="" selected="">
                                 --Seleccionar Estado--
                             </option>
-                            
+                            <?php 
+                                require_once("assets/php/estados.php");
+                                $obj = new Estado();
+                                echo $obj->consultar();
+                             ?>
                         </select></td>
                         <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
                         <td><label style="clear: both;display: block;">Dirección</label><textarea class="form-control form-control-sm"></textarea></td>
