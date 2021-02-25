@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -41,17 +42,20 @@
                     </tr>
                     <tr>
                         <td><label style="clear: both;display: block;">Estado</label>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="estado">
                             <option value="" selected="">
                                 --Seleccionar Estado--
                             </option>
                             <?php 
-                                require_once("assets/php/estados.php");
+                                require_once("assets/php/estado.php");
                                 $obj = new Estado();
                                 echo $obj->consultar();
                              ?>
                         </select></td>
-                        <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
+                        <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label>
+                        <select class="form-control form-control-sm" id="municipio">
+                            <option value="" selected="">--Seleccionar--</option>
+                        </select></td>
                         <td><label style="clear: both;display: block;">Dirección</label><textarea class="form-control form-control-sm"></textarea></td>
                         <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="form-control form-control-sm"></td>
                         <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="campoNumerico form-control form-control-sm"></td>
